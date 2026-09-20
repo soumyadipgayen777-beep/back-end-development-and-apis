@@ -1,1 +1,2 @@
 Hello, freeCodeCamp!
+Welcome to the course
