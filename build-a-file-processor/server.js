@@ -11,4 +11,4 @@ async function main(){
 
 main();
 
-fs.writeFileSync("assets/output.txt", "Hello, World");
+fs.writeFileSync("assets/output.txt", "Hello, freeCodeCamp!");
