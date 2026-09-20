@@ -12,3 +12,4 @@ async function main(){
 main();
 
 fs.writeFileSync("assets/output.txt", "Hello, freeCodeCamp!");
+fs.appendFileSync("assets/output.txt", "\nWelcome to the course");
