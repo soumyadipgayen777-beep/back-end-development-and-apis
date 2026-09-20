@@ -14,3 +14,4 @@ main();
 fs.writeFileSync("assets/output.txt", "Hello, freeCodeCamp!");
 fs.appendFileSync("assets/output.txt", "\nWelcome to the course");
 console.log(fs.existsSync("assets/output.txt"));
+console.log(fs.readdirSync("assets"));
