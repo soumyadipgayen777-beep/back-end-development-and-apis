@@ -1,9 +1,11 @@
 // Starter file — add your code here
-const http = require("http");
-const fs = require("fs");
+const fsPromises = require('fs/promises');
 
-console.log(fs);
+async function main(){
+    const data = await fsPromises.readFile('assets/poem.txt', {
+        enconding: 'utf8'
+    });
+    console.log(data);
+}
 
-console.log(fs.readFile("assets/poem.txt", { encoding: "utf8" }, (err, data) => {
-  console.log(data);
-}));
+main();
