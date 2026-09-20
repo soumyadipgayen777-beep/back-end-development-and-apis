@@ -4,4 +4,4 @@ const fs = require("fs");
 
 console.log(fs);
 
-console.log(fs.readFileSync('assets/poem.txt'));
+console.log(fs.readFileSync('assets/poem.txt', {encoding: 'utf8'}));
