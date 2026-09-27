@@ -52,6 +52,10 @@
         "--init-file",
         "./bash/sourcerer.sh"
       ],
+      "args": [
+        "--init-file",
+        "./bash/sourcerer.sh"
+      ],
       "icon": "terminal-bash",
       "path": "bash"
     }
