@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/form", (req, res) => {
-    res.sendFile("public/index.html");
+    res.sendFile(fileURLToPath(new URL("./public/index.html", import.meta.url)));
 });
 
 app.post("/submit", inputCleaner, inputValidator, (req, res) => {
