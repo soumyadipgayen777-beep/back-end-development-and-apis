@@ -15,3 +15,5 @@ const finalErrorHandler = (err, req, res, next) => {
         message: status === 500 ? 'Internal Server Error (Check Server Logs)' : err.message
     });
 };
+
+export {notFoundHandler, finalErrorHandler};
