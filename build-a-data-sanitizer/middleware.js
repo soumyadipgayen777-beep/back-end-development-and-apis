@@ -5,8 +5,13 @@ export function inputCleaner(req, res, next){
     if(req.body.comment){
         req.body.comment = req.body.comment.replace(/<[^>]*>/g, "");
     }
+    next();
 }
 
 export function inputValidator(req, res, next){
-
+    if(req.body.username.length >= 3){
+        next();
+    }else{
+        res.redirect("/form?error=Username must be at least 3 characters.");
+    }
 }
