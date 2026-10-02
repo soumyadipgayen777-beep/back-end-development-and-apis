@@ -69,7 +69,7 @@
     "dashedName": "build-a-random-joke-app",
     "isIntegrated": false,
     "isPublic": true,
-    "currentLesson": 3,
+    "currentLesson": 4,
     "runTestsOnWatch": true,
     "seedEveryLesson": false,
     "isResetEnabled": false,
