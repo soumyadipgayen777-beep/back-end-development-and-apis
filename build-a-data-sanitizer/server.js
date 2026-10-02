@@ -5,7 +5,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.redirect("/form");
+    res.redirect("http://localhost:3000/form");
 });
 
 app.get("/form", (req, res) => {
