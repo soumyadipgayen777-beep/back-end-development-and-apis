@@ -6,6 +6,10 @@ app.get("/", (req, res) => {
     res.send("Welcome to Camper Bot's homepage!");
 });
 
+app.get("/hobbies", (req, res) => {
+    res.send("I cycle, go boating, and play guitar.");
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
