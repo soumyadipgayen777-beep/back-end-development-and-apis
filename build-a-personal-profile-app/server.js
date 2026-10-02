@@ -14,6 +14,14 @@ app.get("/skills", (req, res) => {
     res.send("JavaScript, Node.js, and Express.js!");
 });
 
+app.get("/api/profile", (req, res) => {
+    res.json({
+        name: "Camper Bot",
+        hobbies: ['cycling', 'boating', 'guitar'],
+        skills: ['JavaScript', 'Node.js', 'Express.js']
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
