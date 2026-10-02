@@ -10,6 +10,10 @@ app.get("/hobbies", (req, res) => {
     res.send("I cycle, go boating, and play guitar.");
 });
 
+app.get("/skills", (req, res) => {
+    res.send("JavaScript, Node.js, and Express.js!");
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
