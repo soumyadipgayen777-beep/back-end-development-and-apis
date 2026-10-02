@@ -17,7 +17,7 @@
     "dashedName": "build-a-file-processor",
     "isIntegrated": false,
     "isPublic": true,
-    "currentLesson": 0,
+    "currentLesson": 10,
     "runTestsOnWatch": true,
     "seedEveryLesson": false,
     "isResetEnabled": false,
@@ -49,7 +49,8 @@
     "isResetEnabled": false,
     "blockingTests": true,
     "breakOnFailure": true,
-    "numberOfLessons": 1
+    "numberOfLessons": 1,
+    "completedDate": 1790500225954
   },
   {
     "id": 4,
@@ -69,13 +70,14 @@
     "dashedName": "build-a-random-joke-app",
     "isIntegrated": false,
     "isPublic": true,
-    "currentLesson": 0,
+    "currentLesson": 7,
     "runTestsOnWatch": true,
     "seedEveryLesson": false,
     "isResetEnabled": false,
     "blockingTests": null,
     "breakOnFailure": null,
-    "numberOfLessons": 8
+    "numberOfLessons": 8,
+    "completedDate": 1790911898840
   },
   {
     "id": 6,
@@ -88,7 +90,8 @@
     "isResetEnabled": true,
     "numberOfLessons": 1,
     "blockingTests": false,
-    "breakOnFailure": false
+    "breakOnFailure": false,
+    "completedDate": 1790917090954
   },
   {
     "id": 7,
