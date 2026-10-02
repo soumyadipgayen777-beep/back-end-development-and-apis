@@ -10,6 +10,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", apiRouter);
+app.use(notFoundHandler);
+app.use(finalErrorHandler);
 
 app.listen(3000, () => {
     console.log("Server is running on http://localhost:3000");
