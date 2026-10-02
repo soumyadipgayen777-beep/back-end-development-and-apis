@@ -12,6 +12,11 @@ app.get("/", (req, res) => {
     res.send("Welcome to the Random Joke Server! Visit /joke to get a random joke.");
 });
 
+app.get("/joke", (req, res) => {
+    const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+    res.send(randomJoke);
+})
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
