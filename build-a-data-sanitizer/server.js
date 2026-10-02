@@ -8,6 +8,10 @@ app.get("/", (req, res) => {
     res.redirect("/form");
 });
 
+app.get("/form", (req, res) => {
+    res.sendFile("public/index.html");
+});
+
 app.listen(3000, () => {
     console.log("server is running on port 3000");
 });
