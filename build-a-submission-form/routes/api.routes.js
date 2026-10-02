@@ -7,5 +7,10 @@ router.get("/", (req, res) => {
 router.get("/crash", (req, res, next) => {
     next(new Error("Database connection failed."))
 });
+router.get("/bad-request", (req, res, next) => {
+    const err = new Error("Client-side data is missing.");
+    err.status = 400;
+    next(err);
+});
 
 export default router;
