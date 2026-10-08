@@ -12,7 +12,7 @@ const PORT = 3000;
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-    res.send("Welcome to our weather service api");
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.get("/api/info", (req, res) => {
