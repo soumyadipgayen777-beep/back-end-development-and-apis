@@ -1,4 +1,5 @@
 import express from "express";
+import weatherRouter from "./weather.js";
 const app = express();
 const PORT = 3000;
 
@@ -35,6 +36,8 @@ app.route("/api/data")
     })
     .post((req, res) => {
         res.status(201).json();
-    })
+    });
+
+app.use("/api/weather", weatherRouter);
 
 app.listen(PORT, () => {});
