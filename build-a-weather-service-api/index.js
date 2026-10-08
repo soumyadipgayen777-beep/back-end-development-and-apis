@@ -1,7 +1,15 @@
 import express from "express";
 import weatherRouter from "./weather.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 const PORT = 3000;
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
     res.send("Welcome to our weather service api");
