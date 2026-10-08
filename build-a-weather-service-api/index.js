@@ -29,4 +29,9 @@ app.get("/api/greet/:name", (req, res) => {
     });
 });
 
+app.route("/api/data")
+    .get((req, res) => {
+        res.json();
+    })
+
 app.listen(PORT, () => {});
