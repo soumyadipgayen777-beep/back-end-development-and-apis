@@ -17,7 +17,9 @@ app.get("/", (req, res) => {
 
 app.get("/api/info", (req, res) => {
     res.json({
-        name: "Weather Service API"
+        name: "Weather Service API",
+        version: "1.0.0",
+        endpoints: ["/api/weather/:city", "/api/greet/:name", "/api/data"]
     });
 });
 
