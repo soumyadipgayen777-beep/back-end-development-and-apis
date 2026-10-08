@@ -12,4 +12,10 @@ app.get("/api/info", (req, res) => {
     });
 });
 
+app.get("/api/status", (req, res) => {
+    res.status(200).json({
+        status: 200
+    });
+});
+
 app.listen(PORT, () => {});
