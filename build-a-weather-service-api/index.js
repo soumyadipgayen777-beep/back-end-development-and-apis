@@ -22,4 +22,11 @@ app.get("/docs", (req, res) => {
     res.redirect("/api/info");
 });
 
+app.get("/api/greet/:name", (req, res) => {
+    const name = req.params.name;
+    res.json({
+        name: name
+    });
+});
+
 app.listen(PORT, () => {});
