@@ -18,4 +18,8 @@ app.get("/api/status", (req, res) => {
     });
 });
 
+app.get("/docs", (req, res) => {
+    res.redirect("/api/info");
+});
+
 app.listen(PORT, () => {});
