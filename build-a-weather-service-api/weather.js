@@ -7,3 +7,5 @@ router.get("/", (req, res) => {
         supported_cities: SUPPORTED_CITIES
     });
 });
+
+export default router;
