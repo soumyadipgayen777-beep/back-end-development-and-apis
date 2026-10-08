@@ -33,5 +33,8 @@ app.route("/api/data")
     .get((req, res) => {
         res.json();
     })
+    .post((req, res) => {
+        res.status(201).json();
+    })
 
 app.listen(PORT, () => {});
