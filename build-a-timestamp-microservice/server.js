@@ -13,6 +13,11 @@ app.get("/", (_req, res) => {
 
 // Do not change code above this line
 
+app.get("/api/:date?", (req, res) => {
+  const date = req.params.date;
+  const parsedDate = date ? new Date(date) : new Date();
+});
+
 // Do not change code below this line
 
 const PORT = 8000;
