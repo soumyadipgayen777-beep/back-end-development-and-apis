@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import { parse } from "@babel/parser";
 
 const app = express();
 
@@ -13,12 +14,23 @@ app.get("/", (_req, res) => {
 
 // Do not change code above this line
 
-app.get("/api/:date?", (req, res) => {
+app.get(["/api", "/api/:date"], (req, res) => {
   const date = req.params.date;
-  const parsedDate = date ? new Date(date) : new Date();
 
-  if(Number.isNaN(parsedDate.getTime())){
-    res.json({error: "Invalid Date"});
+  let parsedDate;
+  if(date){
+    if(!Number.isNaN(Number(date))){
+    parsedDate = new Date(Number(date));
+    }else{
+      parsedDate = new Date(date);
+    }
+  }else{
+    parsedDate = new Date();
+  }
+
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    res.json({ error: "Invalid Date" });
     return;
   }
   res.json({
