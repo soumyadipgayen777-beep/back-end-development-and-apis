@@ -54,7 +54,7 @@ app.post("/transfer", async (req, res, next) => {
         }
 
         const accounts = await getAccounts();
-        const account = accounts.find((a) => a.id === fromId);
+        const sender = accounts.find((a) => a.id === fromId);
 
         if (!sender) {
             const err = new Error("Sender account not found");
@@ -64,17 +64,31 @@ app.post("/transfer", async (req, res, next) => {
 
         const recipient = accounts.find((a) => a.id === toId);
 
-        if(!recipient){
+        if (!recipient) {
             const err = new Error("Recipient account not found");
             err.status = 404;
             throw err;
         }
 
-        if(sender.balance < amount){
+        if (sender.balance < amount) {
             const err = new Error("Insufficient funds");
             err.status = 409;
             throw err;
         }
+
+        sender.balance -= amount;
+        recipient.balance += amount;
+
+        await saveAccounts(accounts);
+
+        res.json({
+            message: "Transfer successful",
+            senderName: sender.owner,
+            recipientName: recipient.owner,
+            amountTransferred: amount,
+            senderNewBalance: sender.balance,
+            recipientNewBalance: recipient.balance,
+        });
 
     } catch (err) {
         next(err);
