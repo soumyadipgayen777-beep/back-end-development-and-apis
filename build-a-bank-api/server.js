@@ -5,6 +5,7 @@ const app = express();
 const PORT = 9000;
 
 app.use(express.json());
+app.set("json spaces", 2);
 
 app.get("/", (req, res) => {
     res.send('Tiny Bank API running...');
