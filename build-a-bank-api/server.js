@@ -15,45 +15,54 @@ app.get("/accounts", async (req, res, next) => {
     try {
         const accounts = await getAccounts();
         res.json(accounts);
-    }catch(err){
+    } catch (err) {
         next(err);
     }
 });
 
-app.get("/accounts/:id", async(req, res, next) => {
-    try{
+app.get("/accounts/:id", async (req, res, next) => {
+    try {
         const accounts = await getAccounts();
         const account = accounts.find((a) => a.id === parseInt(req.params.id));
 
-        if(!account){
+        if (!account) {
             const err = new Error("Account not found");
             err.status = 404;
             throw err;
         }
 
         res.json(account);
-    }catch(err){
+    } catch (err) {
         next(err);
     }
 });
 
-app.post("/transfer", async(req, res, next) => {
-    try{
-        const {fromId, toId, amount} = req.body;
+app.post("/transfer", async (req, res, next) => {
+    try {
+        const { fromId, toId, amount } = req.body;
 
-        if(!fromId || !toId || !amount){
+        if (!fromId || !toId || !amount) {
             const err = new Error("Missing required fields: fromId, toId, amount");
             err.status = 400;
             throw err;
         }
 
-        if(amount <= 0){
+        if (amount <= 0) {
             const err = new Error("Transfer amount must be positive");
             err.status = 400;
             throw err;
         }
 
-    }catch(err){
+        const accounts = await getAccounts();
+        const account = accounts.find((a) => a.id === fromId);
+
+        if (!sender) {
+            const err = new Error("Sender account not found");
+            err.status = 404;
+            throw err;
+        }
+
+    } catch (err) {
         next(err);
     }
 })
