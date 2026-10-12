@@ -46,6 +46,13 @@ app.post("/transfer", async(req, res, next) => {
             err.status = 400;
             throw err;
         }
+
+        if(amount <= 0){
+            const err = new Error("Transfer amount must be positive");
+            err.status = 400;
+            throw err;
+        }
+
     }catch(err){
         next(err);
     }
