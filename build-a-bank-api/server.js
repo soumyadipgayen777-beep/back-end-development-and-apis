@@ -70,6 +70,12 @@ app.post("/transfer", async (req, res, next) => {
             throw err;
         }
 
+        if(sender.balance < amount){
+            const err = new Error("Insufficient funds");
+            err.status = 409;
+            throw err;
+        }
+
     } catch (err) {
         next(err);
     }
