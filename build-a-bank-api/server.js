@@ -37,6 +37,20 @@ app.get("/accounts/:id", async(req, res, next) => {
     }
 });
 
+app.post("/transfer", async(req, res, next) => {
+    try{
+        const {fromId, toId, amount} = req.body;
+
+        if(!fromId || !toId || !amount){
+            const err = new Error("Missing required fields: fromId, toId, amount");
+            err.status = 400;
+            throw err;
+        }
+    }catch(err){
+        next(err);
+    }
+})
+
 app.listen(PORT, () => {
     console.log(`Tiny Bank API running on http://localhost:${PORT}...`);
 });
