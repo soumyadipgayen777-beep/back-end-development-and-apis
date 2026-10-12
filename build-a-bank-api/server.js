@@ -1,7 +1,10 @@
 import express from "express";
+import {getAccounts, saveAccounts} from "./db.js";
 
 const app = express();
 const PORT = 9000;
+
+app.use(express.json());
 
 app.get("/", (req, res) => {
     res.send('Tiny Bank API running...');
