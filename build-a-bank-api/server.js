@@ -122,3 +122,11 @@ app.use((err, req, res, next) => {
 const server = app.listen(PORT, () => {
     console.log(`Tiny Bank API running on http://localhost:${PORT}...`);
 });
+
+process.on("SIGTERM", () => {
+    console.log("SIGTERM received. Closing server...");
+    server.close(() => {
+        console.log("Server closed.");
+        process.exit(0);
+    })
+});
