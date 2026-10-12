@@ -95,10 +95,10 @@ app.post("/transfer", async (req, res, next) => {
     }
 });
 
-app.get("/broken", (req, res, next) => {
-    const err = new Error("Whoops! Something went wrong on the server");
-    next(err);
-});
+// app.get("/broken", (req, res, next) => {
+//     const err = new Error("Whoops! Something went wrong on the server");
+//     next(err);
+// });
 
 app.use((err, req, res, next) => {
     console.error("Error:", err.message);
