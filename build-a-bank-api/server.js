@@ -20,6 +20,23 @@ app.get("/accounts", async (req, res, next) => {
     }
 });
 
+app.get("/accounts/:id", async(req, res, next) => {
+    try{
+        const accounts = await getAccounts();
+        const account = accounts.find((a) => a.id === parseInt(req.params.id));
+
+        if(!account){
+            const err = new Error("Account not found");
+            err.status = 404;
+            throw err;
+        }
+
+        res.json(account);
+    }catch(err){
+        next(err);
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Tiny Bank API running on http://localhost:${PORT}...`);
 });
