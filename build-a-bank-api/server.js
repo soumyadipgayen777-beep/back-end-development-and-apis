@@ -62,6 +62,14 @@ app.post("/transfer", async (req, res, next) => {
             throw err;
         }
 
+        const recipient = accounts.find((a) => a.id === toId);
+
+        if(!recipient){
+            const err = new Error("Recipient account not found");
+            err.status = 404;
+            throw err;
+        }
+
     } catch (err) {
         next(err);
     }
