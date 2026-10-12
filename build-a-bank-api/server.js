@@ -130,3 +130,11 @@ process.on("SIGTERM", () => {
         process.exit(0);
     })
 });
+
+process.on("SIGINT", () => {
+    console.log("SIGINT received. Closing server...");
+    server.close(() => {
+        console.log("Server closed.");
+        process.exit(0);
+    })
+});
