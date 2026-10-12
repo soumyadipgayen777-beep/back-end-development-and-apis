@@ -93,7 +93,17 @@ app.post("/transfer", async (req, res, next) => {
     } catch (err) {
         next(err);
     }
-})
+});
+
+app.use((err, req, res, next) => {
+    console.error("Error:", err.message);
+    res.status(err.status || 500).json({
+        error: {
+            message: err.message || "Internal Server Error",
+            status: err.status || 500,
+        },
+    });
+});
 
 app.listen(PORT, () => {
     console.log(`Tiny Bank API running on http://localhost:${PORT}...`);
