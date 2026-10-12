@@ -100,6 +100,15 @@ app.post("/transfer", async (req, res, next) => {
 //     next(err);
 // });
 
+app.get("/health", (req, res) => {
+    res.json({
+        status: "ok",
+        uptime: process.uptime(),
+        timestamp: new Date().toISOString(),
+        memoryUsage: process.memoryUsage(),
+    });
+});
+
 app.use((err, req, res, next) => {
     console.error("Error:", err.message);
     res.status(err.status || 500).json({
@@ -110,6 +119,6 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Tiny Bank API running on http://localhost:${PORT}...`);
 });
