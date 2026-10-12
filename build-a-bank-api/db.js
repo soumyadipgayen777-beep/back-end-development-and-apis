@@ -8,5 +8,9 @@ import { fileURLToPath } from "url";
 
  export async function getAccounts(){
     const data = await readFile(DB_PATH, "utf8");
-    return json.parse(data);
+    return JSON.parse(data);
+ }
+
+ export async function saveAccounts(){
+    await writeFile(DB_PATH, JSON.stringify(accounts, null, 2));
  }
