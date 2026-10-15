@@ -20,3 +20,8 @@ const socket = new WebSocket("ws://localhost:3000");
 socket.onopen = () => {
   setStatus("Connected");
 };
+
+socket.onmessage = (e) => {
+  const data = JSON.parse(e.data);
+  updateMetrics(data);
+}
