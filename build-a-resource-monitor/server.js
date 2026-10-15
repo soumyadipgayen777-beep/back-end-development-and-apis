@@ -12,6 +12,10 @@ const server = http.createServer((req, res) => {
 
 const wss = new WebSocketServer({server});
 
+wss.on("connection", (socket) => {
+    console.log("Client connected");
+});
+
 server.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
 });
