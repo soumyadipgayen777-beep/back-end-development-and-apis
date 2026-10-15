@@ -1,7 +1,21 @@
 import http from "http";
 import fs from "fs";
 import { WebSocketServer } from "ws";
+import os from "os";
 const PORT = 3000;
+
+function getMetrics() {
+  return {
+    loadAvg: os.loadavg(),
+    freeMemMB: (os.freemem() / 1024 / 1024).toFixed(0),
+    totalMemMB: (os.totalmem() / 1024 / 1024).toFixed(0),
+    memUsagePct: (
+      ((os.totalmem() - os.freemem()) / os.totalmem()) *
+      100
+    ).toFixed(1),
+  };
+}
+
 
 const server = http.createServer((req, res) => {
     fs.readFile("./public/index.html", "utf-8", (err, data) => {
