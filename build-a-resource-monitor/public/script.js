@@ -29,3 +29,7 @@ socket.onmessage = (e) => {
 socket.onclose = () => {
   setStatus("Disconnected");
 };
+
+socket.onerror = (err) => {
+  console.error("WebSocket error:", err);
+};
