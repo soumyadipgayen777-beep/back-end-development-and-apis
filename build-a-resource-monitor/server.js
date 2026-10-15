@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
     });
 });
 
-const wss = new WebSocketServer({server});
+const wss = new WebSocketServer({ server });
 
 wss.on("connection", (socket) => {
     console.log("Client connected");
@@ -19,6 +19,9 @@ wss.on("connection", (socket) => {
     });
     socket.on("close", () => {
         console.log("Client disconnected");
+    });
+    socket.on("error", (err) => {
+        console.error("Socket error:", err);
     });
 });
 
