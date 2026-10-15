@@ -16,3 +16,7 @@ function setStatus(text) {
 // Your code below - create a WebSocket connection and handle events.
 
 const socket = new WebSocket("ws://localhost:3000");
+
+socket.onopen = () => {
+  setStatus("Connected");
+};
