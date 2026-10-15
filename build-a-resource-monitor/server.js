@@ -14,6 +14,9 @@ const wss = new WebSocketServer({server});
 
 wss.on("connection", (socket) => {
     console.log("Client connected");
+    socket.on("message", (data) => {
+        console.log("Received:", data.toString());
+    });
 });
 
 server.listen(PORT, () => {
