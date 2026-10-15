@@ -1,5 +1,6 @@
 import http from "http";
 import fs from "fs";
+import { WebSocketServer } from "ws";
 const PORT = 3000;
 
 const server = http.createServer((req, res) => {
@@ -8,6 +9,8 @@ const server = http.createServer((req, res) => {
         res.end(data);
     });
 });
+
+const wss = new WebSocketServer({server});
 
 server.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
