@@ -17,6 +17,9 @@ wss.on("connection", (socket) => {
     socket.on("message", (data) => {
         console.log("Received:", data.toString());
     });
+    socket.on("close", () => {
+        console.log("Client disconnected");
+    });
 });
 
 server.listen(PORT, () => {
