@@ -24,4 +24,8 @@ socket.onopen = () => {
 socket.onmessage = (e) => {
   const data = JSON.parse(e.data);
   updateMetrics(data);
-}
+};
+
+socket.onclose = () => {
+  setStatus("Disconnected");
+};
