@@ -42,4 +42,14 @@ wss.on("connection", (socket, req) => {
             }));
         }
     }});
+    socket.on("close", () => {
+        for(const client of wss.clients){
+            if(client.readyState === WebSocket.OPEN){
+                client.send(JSON.stringify({
+                    "type": "system",
+                    "text": `${username} left`
+                }));
+            }
+        }
+    });
 });
