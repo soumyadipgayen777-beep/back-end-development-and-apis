@@ -53,3 +53,7 @@ wss.on("connection", (socket, req) => {
         }
     });
 });
+
+server.listen(PORT, () => {
+    console.log("Chat server running at http://localhost:3001");
+})
