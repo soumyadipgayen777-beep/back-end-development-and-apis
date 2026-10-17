@@ -31,4 +31,15 @@ wss.on("connection", (socket, req) => {
             }));
         }
     }
+    socket.on("message", (message) => {
+        const data = JSON.parse(message.toString());
+        for(const client of wss.clients){
+        if(client.readyState === WebSocket.OPEN){
+            client.send(JSON.stringify({
+                "type": "chat",
+                "username": data.username,
+                "text": data.text
+            }));
+        }
+    }});
 });
