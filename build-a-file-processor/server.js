@@ -64,3 +64,6 @@ console.log(process.platform);
 console.log(process.env.NODE_ENV);
 
 console.log(process.argv);
+
+process.stdout.write('Hello from stdout\n');
+process.stderr.write('Hello from stderr\n');
