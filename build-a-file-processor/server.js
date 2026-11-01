@@ -67,3 +67,13 @@ console.log(process.argv);
 
 process.stdout.write('Hello from stdout\n');
 process.stderr.write('Hello from stderr\n');
+
+const readable = fs.createReadStream("assets/poem.txt", {encoding: 'utf-8'});
+
+readable.on("data", (chunk) => {
+    console.log(chunk);
+});
+
+readable.on("end", () => {
+    console.log("Done reading");
+});
