@@ -62,3 +62,5 @@ console.log(parts);
 console.log(process.version);
 console.log(process.platform);
 console.log(process.env.NODE_ENV);
+
+console.log(process.argv);
