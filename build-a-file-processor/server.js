@@ -3,6 +3,7 @@ const fsPromises = require('fs/promises');
 const fs = require('fs');
 const crypto = require('crypto');
 const os = require('os');
+const path = require('path');
 
 async function main(){
     const data = await fsPromises.readFile('assets/poem.txt', {
