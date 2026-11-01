@@ -16,4 +16,6 @@ fs.appendFileSync("assets/output.txt", "\nWelcome to the course");
 console.log(fs.existsSync("assets/output.txt"));
 console.log(fs.readdirSync("assets"));
 const buf = Buffer.from("Hello, Node!");
-console.log(bufuf);
+console.log(buf);
+console.log(buf.toString("hex"));
+console.log(buf.toString("base64"));
