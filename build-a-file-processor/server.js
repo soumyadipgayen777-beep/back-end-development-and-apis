@@ -77,3 +77,7 @@ readable.on("data", (chunk) => {
 readable.on("end", () => {
     console.log("Done reading");
 });
+
+const writable = fs.createWriteStream("assets/stream-output.txt");
+
+readable.pipe(writable);
