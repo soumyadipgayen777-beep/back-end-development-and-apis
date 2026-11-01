@@ -2,6 +2,7 @@
 const fsPromises = require('fs/promises');
 const fs = require('fs');
 const crypto = require('crypto');
+const os = require('os');
 
 async function main(){
     const data = await fsPromises.readFile('assets/poem.txt', {
@@ -36,3 +37,4 @@ console.log(random);
 
 const id = crypto.randomUUID();
 console.log(id);
+
