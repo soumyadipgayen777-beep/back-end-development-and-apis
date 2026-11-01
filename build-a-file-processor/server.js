@@ -38,3 +38,6 @@ console.log(random);
 const id = crypto.randomUUID();
 console.log(id);
 
+console.log(os.platform());
+console.log(os.arch());
+console.log(os.hostname());
