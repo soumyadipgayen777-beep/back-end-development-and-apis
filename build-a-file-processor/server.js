@@ -58,3 +58,7 @@ console.log(path.resolve("assets", "..", "server.js"));
 
 const parts = path.parse(filePath);
 console.log(parts);
+
+console.log(process.version);
+console.log(process.platform);
+console.log(process.env.NODE_ENV);
