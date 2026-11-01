@@ -30,3 +30,6 @@ console.log(decoded);
 
 const hash = crypto.createHash("sha256").update('freeCodeCamp!').digest("hex");
 console.log(hash);
+
+const random = crypto.randomBytes(16).toString('hex');
+console.log(random);
