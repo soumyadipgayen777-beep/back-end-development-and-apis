@@ -47,11 +47,14 @@ console.log(os.freemem());
 console.log(os.uptime());
 console.log(os.cpus().length);
 
-const fullPath = path.join(__dirname, "assets", "poem.txt");
-console.log(fullPath);
+const filePath = path.join(__dirname, "assets", "poem.txt");
+console.log(filePath);
 
-console.log(path.basename(fullPath));
-console.log(path.dirname(fullPath));
-console.log(path.extname(fullPath));
+console.log(path.basename(filePath));
+console.log(path.dirname(filePath));
+console.log(path.extname(filePath));
 console.log(path.join("assets", "..", "server.js"));
 console.log(path.resolve("assets", "..", "server.js"));
+
+const parts = path.parse(filePath);
+console.log(parts);
