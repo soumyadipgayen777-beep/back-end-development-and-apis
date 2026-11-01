@@ -33,3 +33,6 @@ console.log(hash);
 
 const random = crypto.randomBytes(16).toString('hex');
 console.log(random);
+
+const id = crypto.randomUUID();
+console.log(id);
