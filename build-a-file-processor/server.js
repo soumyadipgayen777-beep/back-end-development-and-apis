@@ -1,6 +1,7 @@
 // Starter file — add your code here
 const fsPromises = require('fs/promises');
 const fs = require('fs');
+const crypto = require('crypto');
 
 async function main(){
     const data = await fsPromises.readFile('assets/poem.txt', {
