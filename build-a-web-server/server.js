@@ -22,12 +22,12 @@ const server = http.createServer((request, response) => {
     if (error) {
       console.error(error);
       readFile("public/404.html", (error, file) => {
-        response.writeHead(404);
+        response.writeHead(404, { "Content-Type": "text/html" });
         response.end(file, "utf-8");
       });
       return;
     }
-    response.writeHead(200);
+    response.writeHead(200, { "Content-Type": contentType });
     response.end(file, "utf-8");
   });
 });
